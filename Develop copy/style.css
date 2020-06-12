@@ -76,6 +76,11 @@ textarea {
   border-bottom: #ffffff;
 }
 
+i {
+  position: relative;
+  bottom: 5px;
+}
+
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
