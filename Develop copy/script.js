@@ -16,7 +16,6 @@ for (var i = 9; i < 18; i++) {
   if (currentHour == i) {
     $(areaNum).attr("class", "present");
   }
-  console.log(currentHour);
 }
 
 // save btn
@@ -26,48 +25,34 @@ var button = $(".saveBtn");
 // button needs to save data in ls
 button.on("click", function (event) {
   // var input = input.val();
-  for (var i = 0; i < 9; i++) {
-    var input = "input" + i;
-    var save = localStorage.setItem(input, $(input).val());
+  for (var i = 9; i < 18; i++) {
+    var inputNum = "input" + i;
+    var set = localStorage.setItem(inputNum, $("#input" + i).val());
+    console.log($("#input" + i).val());
   }
 });
+for (var i = 9; i < 18; i++) {
+  var inputNum = "input" + i;
+  var savedData = localStorage.getItem(inputNum);
+  $("#" + inputNum).text(savedData || "");
+}
 
-var values = {
-  input0: $("9").val(),
-  input1: $("btn10").val(),
-};
+// input != local Storage
+// create element not saved
 
-var savedData = JSON.parse(localStorage.getItem("values"));
+// var values = {
+//   input0: $("9").val(),
+//   input1: $("btn10").val(),
+// };
 
-console.log(JSON.parse(savedData));
+// var savedData = JSON.parse(localStorage.getItem("values"));
 
-localStorage.setItem("event", JSON.stringify(values));
+// console.log(JSON.parse(savedData));
+
+// localStorage.setItem("event", JSON.stringify(values));
 
 // for (var i = 0; i < 9; i++) {
 //   var id = "input" + i;
 //   var lsInput = savedData[id];
 //   $("#" + id).val(lsValue);
 // }
-
-// console.log(input);
-
-// when you refresh re-establish from local storage
-
-// add time blocks
-// use api to color coat
-//     if time > grey
-// if time < red
-// if time = green
-
-// if ($(".hour") == moment().hour(Number)) {
-//   console.log(moment().hour)
-// }
-
-// // create a text input
-// // create a save button
-// //     prevent default
-// // save input to html
-// // save to local storage
-
-// $("description").val();
-// localStorage.setItem(("description": description));
